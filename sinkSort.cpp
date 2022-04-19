@@ -31,14 +31,13 @@ int main()
         cout<< a[i]<<" ";
     }
     cout<<endl;
-    for(int i=0;i<len;i++)
+    for(int i=n-1;i>0;i--)
     {
-        for(int j=0;j<len-1;j++)
+        for(int j=i;j>=0;j--)
         {
-            if(a[j]>a[j+1])
+            if(a[j+1]<a[j])
             {
                 swap(&a[j],&a[j+1]);
-                comparCount+=1;
 
             }
         }
