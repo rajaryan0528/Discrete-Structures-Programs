@@ -22,7 +22,7 @@ int main()
     int pos=-1;
     while(low<=high)
     { 
-        mid=(low+(high-low))/2;
+        mid=(low+high)/2;
 
         if (a[mid] == key)
         {
