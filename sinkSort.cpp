@@ -1,4 +1,4 @@
-// Online C++ compiler to run C++ program online
+
 #include <iostream>
 using namespace std;
 void swap(int *a, int *b)
@@ -17,7 +17,6 @@ int main()
     cin>>n;
     int a[n];
     int len=sizeof(a)/sizeof(a[0]);
-    int comparCount=0;
     cout<<"Enter elements of  the array:"<<endl;
 
     for (int i =0; i<n; i++)
@@ -48,7 +47,6 @@ int main()
     {
         cout<< a[i]<<" ";
     }
-    cout<<"Number of comparisons made :"<<comparCount;
 
     return 0;
 }

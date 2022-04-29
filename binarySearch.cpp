@@ -13,7 +13,6 @@ int main()
     {
 
         cin >> a[i];
-    }
     cout << "Enter the element to search for:";
     cin >> key;
     int low=0;
