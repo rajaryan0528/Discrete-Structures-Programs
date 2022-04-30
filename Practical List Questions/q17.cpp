@@ -21,40 +21,31 @@ public:
     }
 };
 
-int checkMatrix(int *adjMatrix, int n, int i, int j)
-{
-    if (*(adjMatrix + j * n + i) == 1)
-        return 1;
-    if (*(adjMatrix + j * n + i) == 0)
-        return 0;
-    if (*(adjMatrix + j * n + i) == -1)
-        return -1;
-}
-
 int main()
 {
     int n;
     cout << "Enter total number of vertices in the graph:";
     cin >> n;
-    int adjMatrix[n][n];
     int vertexList[n];
     for (int i = 0; i < n; i++)
     {
         vertexList[i] = i;
     }
 
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            adjMatrix[i][j] = 0;
-        }
-    }
-
     int e;
     cout << "Enter total number of edges in the graph:";
     cin >> e;
     Edge edgeList[e];
+
+    int incidenceMatrix[n][e];
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < e; j++)
+        {
+            incidenceMatrix[i][j] = 0;
+        }
+    }
+
     int v = 0, u = 0;
     for (int i = 0; i < e; i++)
     {
@@ -62,52 +53,52 @@ int main()
         cin >> v >> u;
         edgeList[i].addEdge(v, u);
     }
-    cout<<"You entered the following edges:"<<endl;
+
+    cout << "You entered the following edges:" << endl;
     for (int i = 0; i < e; i++)
     {
         edgeList[i].dispEdge();
     }
-    cout<<endl;
+    cout << endl;
 
-    // Populating the adjacency matrix for the graph entered
-    // n- number of vertices e- number of edges
+    /* Populating the incidence  matrix for the graph entered
+        --> n- number of vertices e- number of edges
+    */
     int i = 0, j = 0;
     for (int k = 0; k < e; k++)
     {
         i = edgeList[k].startingVertex;
         j = edgeList[k].endingVertex;
-        if (checkMatrix((int *)adjMatrix, n, i, j) == 0)
-            adjMatrix[i][j] = 1;
-
-        if (checkMatrix((int *)adjMatrix, n, i, j) == 1)
-            adjMatrix[i][j] = -1;
+        incidenceMatrix[i][k] = 1;
+        incidenceMatrix[j][k] = -1;
     }
-   
-   //displaying the adjacency matrix of the given graph 
-   cout<<"Adjacency Matrix for the provided digraph"<<endl;
+
+    // displaying the adjacency matrix of the given graph
+    cout << "Incidence  Matrix for the provided digraph" << endl;
     for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < n; j++)
+        for (int j = 0; j < e; j++)
         {
-            cout <<" "<<adjMatrix[i][j] << " ";
+            cout << "  " << incidenceMatrix[i][j] << "  ";
         }
         cout << "\n";
     }
 
-    //calulating the in degree and out degree of each vertex in the graph using the adjacency matrix generated
+    // calulating the in degree and out degree of each vertex in the graph using the adjacency matrix generated
     for (int i = 0; i < n; i++)
     {
-        int outdeg=0;
-        int indeg=0;
-        for (int j = 0; j < n; j++)
+        int outdeg = 0;
+        int indeg = 0;
+        for (int j = 0; j < e; j++)
         {
-            if(adjMatrix[i][j]==1)
+            if (incidenceMatrix[i][j] == 1)
                 outdeg++;
-            if(adjMatrix[i][j]==-1)
-                 indeg++;
+            if (incidenceMatrix[i][j] == -1)
+                indeg++;
         }
-        cout <<vertexList[i]<<"\t"<<"Indegree:"<<indeg<<" |"
-             <<"Outdegree:"<<outdeg<<endl;
+        cout << vertexList[i] << "\t"
+             << "Indegree:" << indeg << " |"
+             << "Outdegree:" << outdeg << endl;
     }
     return 0;
 }
