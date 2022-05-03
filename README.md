@@ -16,3 +16,7 @@
 *The sorting algos are present in the **.vscode** folder*
 
 ## Questions from practical list were also added.
+
+The following questions from the practical list were completed:
+
+*q16 , q17, q18(still needs some work), q19*
