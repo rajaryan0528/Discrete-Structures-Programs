@@ -13,7 +13,6 @@
 
 2.Binary search  
 
-*The sorting algos are present in the **.vscode** folder*
 
 ## Questions from practical list were also added.
 
