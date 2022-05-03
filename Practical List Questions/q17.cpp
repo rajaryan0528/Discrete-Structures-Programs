@@ -64,6 +64,7 @@ int main()
     /* Populating the incidence  matrix for the graph entered
         --> n- number of vertices e- number of edges
     */
+   
     int i = 0, j = 0;
     for (int k = 0; k < e; k++)
     {
