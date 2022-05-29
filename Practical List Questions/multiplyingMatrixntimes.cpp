@@ -42,7 +42,7 @@ int main()
     int e, n;
     cout << "Enter number of vertices:";
     cin >> n;
-    int adjMatrix[n][n]={{1,0,0,0,0},{0,1,0,0,0,0},{0,0,1,0,0},{0,0,0,1,0},{0,0,0,0,1}};
+    int adjMatrix[n][n]={{1,0,1,0,0},{0,1,0,0,0,1},{0,0,1,0,0},{0,0,0,1,0},{1,0,0,0,1}};
     int I[n][n];
     int res[n][n];
     for (int i = 0; i < n; i++) // Identity Matrix
