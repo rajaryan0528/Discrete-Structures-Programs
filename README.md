@@ -18,4 +18,4 @@
 
 The following questions from the practical list were completed:
 
-*q16 , q17, q18(still needs some work), q19*
+*q1,q2(excpet complement()),q16 , q17, q18(still needs some work), q19*
