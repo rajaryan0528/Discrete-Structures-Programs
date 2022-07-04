@@ -16,6 +16,8 @@
 
 ## Questions from practical list were also added.
 
-The following questions from the practical list were completed:
 
-*q1,q2(excpet complement()),q16 , q17, q18(still needs some work), q19*
+Practical  List   Questions are stored in the Practical_List_Questions directory.
+
+For plotting the graph in q8 and q9 , code was written in python since cpp does not a good library for data visulization.
+Matplotlib library of pthon was used.
