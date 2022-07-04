@@ -3,7 +3,7 @@
 
 /* Logic Used:
  --> If deg of all vertices are even both exists.
- --> If defg of any two vertices are odd then only euler path exists.
+ --> If deg of any two vertices are odd then only euler path exists.
 */
 #include <iostream>
 using namespace std;

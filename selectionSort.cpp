@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+#include <vector>
 
 void swap(int *a, int *b)
 {
@@ -10,39 +11,40 @@ void swap(int *a, int *b)
 
 int main()
 {
-    int a[4];
-    int n = sizeof(a) / sizeof(a[0]);
-    int i;
+    int n;
+    cout<<"Enter the size of the array :";
+    cin>>n;
     cout << "Enter elements of the array:";
     cout << '\n';
-    for (i = 0; i < n; i++)
+    vector<int> arr(n,0);
+    for (int i = 0; i < n; i++)
     {
 
-        cin >> a[i];
+        cin >> arr[i];
     }
     cout << "Elements of the  unsorted array:" << endl;
-    for (i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
 
-        cout << a[i] << " ";
+        cout << arr[i] << " ";
     }
     cout << endl;
     int minInd = 0;
-    for (i = 0; i < n - 1; i++)
+    for (int i = 0; i < n - 1; i++)
     {
         minInd = i;
         for (int j = i + 1; j < n; j++)
         {
-            if (a[j] > a[minInd])
+            if (arr[j] < arr[minInd])
                 minInd = j;
-            swap(&a[minInd], &a[j]);
+            swap(&arr[minInd], &arr[j]);
         }
     }
     cout << "Elements of the  sorted array:" << endl;
-    for (i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
 
-        cout << a[i] << " ";
+        cout << arr[i] << " ";
     }
     return 0;
 }
