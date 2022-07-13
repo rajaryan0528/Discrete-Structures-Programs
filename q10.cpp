@@ -1,1 +1,0 @@
-/*WAP that generates all the permutations of a given set of digits, with or without repetition.(For example , if the given set is {1,2}, the permutations are 12 and 21).*/

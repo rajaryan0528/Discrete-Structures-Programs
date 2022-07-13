@@ -24,16 +24,15 @@ public:
     friend void cartesianProd();
     friend set<int> setDifference(Set A, Set B); // A-B and B-A
     friend void symmDiff();                      // A-B U B-A
-    friend int isSubset(Set A);
+    friend int isSubset(Set A, Set B);
     void complement();
 };
 
 int isSubset(Set A, Set B)
 {
     // if A isSubset of B
-    set<int>::iterator one;
-    set<int>::iterator two;
-    // if B is subset  of A then n(B.A) = n(B)
+    // if A is subset  of A then n(B.A) = n(B)
+    // A= 1,2 B=2,3,1,5,6   |intersection| =2 = |A| 
     Set subset;
     subset.arr = Intersection(A, B);
     if (subset.arr.size() == A.arr.size())
@@ -75,6 +74,7 @@ void symmDiff(Set A, Set B)
 
 void Set::complement()
 {
+    // same as set difference here 
 }
 
 void cartesianProd(Set A, Set B)
