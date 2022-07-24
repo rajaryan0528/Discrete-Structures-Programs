@@ -201,8 +201,10 @@ int main()
         case 1:
             if (isSubset(A, B) == 1)
                 cout << "A is subset of B" << endl;
-            if (isSubset(B, A) == 1)
+            else if (isSubset(B, A) == 1)
                 cout << "B is subset of A" << endl;
+            else
+               cout<<"Both sets are disjoint sets."<<endl;
             break;
         case 2:
             uni.arr = Union(A, B);

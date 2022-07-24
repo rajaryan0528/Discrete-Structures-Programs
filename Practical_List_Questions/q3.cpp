@@ -44,9 +44,7 @@ bool isSymmetric(int *arr, int s)
     {
         for (int j = 0; j < s; j++)
         {
-            if ((*(arr + i * s + j) == 1) & (*(arr + j * s + i) == 1))
-                yes = true;
-            else
+            if ((*(arr + i * s + j) == 1) & (*(arr + j * s + i) != 1))
                 yes = false;
         }
     }

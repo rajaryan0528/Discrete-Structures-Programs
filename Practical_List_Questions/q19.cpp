@@ -22,6 +22,8 @@ void check(int degList[], int n)
     }
     if (evenDeg == n)
         cout << "The graph is both an euler path and an euler circuit." << endl;
+    else
+        cout << "The graph is neither an euler path nor an euler circuit." << endl;
     if (oddDeg == 2)
         cout << "The graph is only an euler path not an euler circuit." << endl;
 }
@@ -38,7 +40,6 @@ void calcDeg(int *adjMatrix, int n, int degList[])
             if (*(adjMatrix + i * n + j) == 1)
             {
                 deg += 1;
-                cout << i << j << endl;
             }
         }
         degList[i] = deg;

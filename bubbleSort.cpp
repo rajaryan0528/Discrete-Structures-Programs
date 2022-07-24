@@ -30,7 +30,7 @@ void write(int comparCount, int n)
 int main() 
 {
     int n;
-    vector<int> arr(n,0);
+    vector<int> arr;
     int comparCount=0;
     cout<<"Enter the number of  elements in   the array:"<<endl;
     cin>>n;
@@ -47,6 +47,7 @@ int main()
     {
         cout<<arr[i]<<" ";
     }
+    
     cout<<endl<<"--------------------------------------------"<<endl;
     for(int i=0;i<n;i++)
     {

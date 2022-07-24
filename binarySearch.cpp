@@ -13,6 +13,7 @@ int main()
     {
 
         cin >> a[i];
+    }
     cout << "Enter the element to search for:";
     cin >> key;
     int low=0;
@@ -34,7 +35,7 @@ int main()
            low=mid+1;
     }
     if(pos !=-1)
-    cout << "Element is present at " <<pos+1<< endl;
+    cout << "Element is present at position :  " <<pos+1<< endl;
     if(low>high)
       cout<<"Element not present in the array."<<endl;
     return 0;

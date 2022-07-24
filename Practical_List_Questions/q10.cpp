@@ -40,6 +40,7 @@ int main()
     {
         cin >> set[i];
     }
+    cout<<"----------------------------------------------------------"<<endl;
     permutation(set, n);
     return 0;
 }

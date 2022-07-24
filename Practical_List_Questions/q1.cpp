@@ -45,6 +45,7 @@ void Set::powerset()
         cout << "}"
              << "  ";
     }
+    cout<<endl;
 }
 
 bool ismember(int a, Set A)
@@ -87,18 +88,55 @@ void Set::disp()
     cout << " }" << endl;
 }
 
+void menu()
+{
+    cout << "--------------------------------------------------------------------" << endl;
+    cout << "0.Exit" << endl;
+    cout << "1.The cardinality of SET" << endl;
+    cout << "2.isMember(a,A): checks  whether an element belongs to set or not" << endl;
+    cout << "3.powerset(A) : list all the elements of power set of a given set" << endl;
+    cout << "--------------------------------------------------------------------" << endl;
+    cout << "Please enter your choice:";
+}
+
 int main()
 {
     Set A;
     A.getElements();
     A.disp();
-    cout << "\nCardinality of the set = " << A.setArr.size() << endl;
-    A.powerset();
-    int ele;
-    bool res;
-    cout << "\nEnter the element that is to be checked :";
-    cin >> ele;
-    res = ismember(ele, A);
-    cout << ele << " is a memeber of the set." << endl;
+    int ch;
+    do
+    {
+        menu();
+        cin >> ch;
+        switch (ch)
+        {
+        case 1:
+            cout << "\nCardinality of the set = " << A.setArr.size() << endl;
+            break;
+        case 2:
+            int ele;
+            bool res;
+            cout << "\nEnter the element that is to be checked :";
+            cin >> ele;
+            res = ismember(ele, A);
+            if (res == 1)
+                cout << ele << " is a member of the set." << endl;
+            else
+                cout << ele << " is  not a member of the set." << endl;
+            break;
+
+        case 3:
+            A.powerset();
+            break;
+
+        default:
+            if (ch == 0)
+                cout << "Task Exited." << endl;
+            else
+                cout << "Please enter a valid choice." << endl;
+        }
+
+    } while (ch != 0);
     return 0;
 }
